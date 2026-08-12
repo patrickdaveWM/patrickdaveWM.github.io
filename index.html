@@ -15,14 +15,5 @@ texte_bienvenue: "Ceci est mon premier paragraphe modifiable depuis le CMS."
     <h1>[[titre_principal]]</h1>
     <div>[[texte_bienvenue]]</div>
 
-    <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; });
-          }
-        });
-      }
-    </script>
 </body>
 </html>
