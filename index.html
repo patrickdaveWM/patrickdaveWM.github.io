@@ -1,0 +1,28 @@
+---
+titre_principal: "Bienvenue sur mon site !"
+texte_bienvenue: "Ceci est mon premier paragraphe modifiable depuis le CMS."
+---
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mon Site</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Correction : Remise en place propre du script d'identité Netlify -->
+    </script>
+</head>
+<body>
+    <h1>[[titre_principal]]</h1>
+    <div>[[texte_bienvenue]]</div>
+
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; });
+          }
+        });
+      }
+    </script>
+</body>
+</html>
